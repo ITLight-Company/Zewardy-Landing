@@ -1,0 +1,212 @@
+<link
+  href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
+  rel="stylesheet"
+/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+
+<div data-aos="fade-in" data-aos-duration="1000" data-aos-delay="500">
+  <div class="navbar">
+    <div class="navbar_container">
+      <div class="navbar_container_logo">
+        <img src="../../assets/logo.svg" alt="" />
+      </div>
+      <div class="navbar_container_links">
+        <div class="navbar_container_links">
+          <a
+            class="navbar_container_links_link"
+            [class.font-bold]="isActive('/home')"
+            [routerLink]="'/home'"
+          >
+            Home
+          </a>
+          <a
+            class="navbar_container_links_link"
+            [class.font-bold]="isActive('/privacy-policy')"
+            [routerLink]="'/privacy-policy'"
+          >
+            Privacy Policy
+          </a>
+          <a
+            class="navbar_container_links_link"
+            href="https://www.facebook.com/profile.php?id=61569753304004"
+          >
+            Contact
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <header
+    class="justify-between items-center p-2 mobileNav headers fixed w-100"
+    style="background-color: #ffffff; left: 0; right: 0; z-index: 1000"
+  >
+    <div class="-mr-2 -my-2 md:hidden">
+      <button
+        type="button"
+        class="rounded-md p-2 h-50 w-full md:hidden bg-blue-500 hamburger-btn"
+        style="background-color: #ffffff; color: #202327; border-color: #202327"
+        (click)="toggleMenu()"
+      >
+        <svg
+          class="h-6 w-6"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          aria-hidden="true"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"
+          />
+        </svg>
+      </button>
+    </div>
+    <div
+      class="absolute z-30 top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden"
+      [ngClass]="{ hidden: !isMenuOpen }"
+    >
+      <div
+        class="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50"
+      >
+        <div
+          class="flex items-center justify-between"
+          style="background-color: #ffffff"
+        >
+          <button
+            type="button"
+            class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+            style="
+              background-color: #ffffff;
+              color: #202327;
+              border-color: #202327;
+            "
+            (click)="toggleMenu()"
+          >
+            <svg
+              class="h-6 w-6"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+        </div>
+        <div class="py-6 px-5" style="background-color: #ffffff">
+          <div class="grid gap-4" style="background-color: #ffffff">
+            <a
+              class="navbar_container_links_link"
+              [routerLink]="'/home'"
+              (click)="closeMenu()"
+              >Home</a
+            >
+            <a
+              class="navbar_container_links_link"
+              [routerLink]="'/privacy-policy'"
+              (click)="closeMenu()"
+              >Privacy Policy</a
+            >
+            <a
+              class="navbar_container_links_link"
+              href="https://www.facebook.com/profile.php?id=61569753304004"
+              (click)="closeMenu()"
+              >Contact</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="firstpage">
+    <div class="firstpage_container">
+      <div class="firstpage_container_base">
+        <div class="firstpage_container_base_leftside">
+          <div class="firstpage_container_base_leftside_me">
+            <h1 class="firstpage_container_base_leftside_me_name">
+              Welcome to Zewardy
+            </h1>
+          </div>
+          <div class="firstpage_container_base_leftside_description">
+            <p class="firstpage_container_base_leftside_description_text">
+              Dive into a world of quizzes and videos that entertain and reward
+              you. Zewardy – have fun and earn anytime, anywhere!
+            </p>
+          </div>
+          <div class="firstpage_container_base_leftside_buttons">
+            <img
+              src="../../assets/google_play_button.png"
+              alt="Google Play"
+              class="firstpage_container_base_leftside_buttons_button"
+            />
+            <img
+              src="../../assets/app_store_button.png"
+              alt="App Store"
+              class="firstpage_container_base_leftside_buttons_button"
+            />
+          </div>
+        </div>
+        <div class="firstpage_container_base_rightside">
+          <div class="firstpage_container_base_rightside_image">
+            <img
+              class="firstpage_container_base_rightside_image_picture"
+              [src]="m_phone_mockup"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="m_firstpage">
+    <div class="m_firstpage_container">
+      <div class="m_firstpage_container_base">
+        <div class="m_firstpage_container_base_leftside">
+          <div class="m_firstpage_container_base_leftside_image">
+            <img
+              class="m_firstpage_container_base_leftside_image_picture"
+              [src]="m_phone_mockup"
+            />
+            <div
+              class="m_firstpage_container_base_leftside_image_background"
+            ></div>
+          </div>
+
+          <div class="m_firstpage_container_base_leftside_buttons">
+            <img
+              src="../../assets/google_play_button.png"
+              alt="Google Play"
+              class="m_firstpage_container_base_leftside_buttons_button"
+            />
+            <img
+              src="../../assets/app_store_button.png"
+              alt="App Store"
+              class="m_firstpage_container_base_leftside_buttons_button"
+            />
+          </div>
+          <div class="m_firstpage_container_base_leftside_me">
+            <h1 class="m_firstpage_container_base_leftside_me_name">
+              Welcome to Zewardy
+            </h1>
+          </div>
+          <div class="m_firstpage_container_base_leftside_description">
+            <p class="m_firstpage_container_base_leftside_description_text">
+              Dive into a world of quizzes and videos that entertain and reward
+              you. Zewardy – have fun and earn anytime, anywhere!
+            </p>
+          </div>
+
+          <div class="slider-thumb"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

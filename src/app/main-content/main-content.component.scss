@@ -1,0 +1,267 @@
+@mixin sp-layout {
+  @media screen and (max-width: 750px) {
+    @content;
+  }
+}
+
+.firstpage {
+  &_container {
+    display: flex;
+    align-items: center;
+    background: white;
+    background-image: url("../../assets/shape.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    flex-direction: column;
+    &_base {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &_leftside {
+        display: flex;
+        width: 70%;
+        margin-left: 5%;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-direction: column;
+        &_buttons {
+          margin-top: 10px;
+          display: flex;
+          justify-content: start;
+          align-items: center;
+          &_button {
+            margin-right: 20px;
+            border-radius: 5px;
+            background-color: #f1f1f1;
+            color: #000000;
+            font-size: 15px;
+            width: 20%;
+            font-weight: 500;
+            cursor: pointer;
+            transition: 0.3s;
+            &:hover {
+              background-color: #000000;
+              color: #ffffff;
+            }
+          }
+        }
+        &_title {
+          font-style: normal;
+          font-weight: 500;
+          font-size: 15px;
+          color: #ffffff;
+          justify-content: center;
+          align-items: center;
+          display: flex;
+          margin-top: 5px;
+
+          &_text {
+            width: 100%;
+            text-align: center;
+            line-height: 0.1em;
+            margin: 10px 0 20px;
+            display: flex;
+            flex-direction: row;
+            &_line {
+              display: inline-block;
+              width: 20px;
+              margin-right: 5px;
+              margin-left: 5px;
+              height: 2px;
+              background-color: #ffffff;
+              vertical-align: middle;
+            }
+          }
+        }
+        &_me {
+          line-height: 1;
+          &_name {
+            font-size: 38px;
+            color: #232e35;
+            font-weight: bold;
+            &_surname {
+              color: #232e35;
+            }
+          }
+        }
+        &_description {
+          margin-top: 30px;
+          line-height: 1.4;
+          width: 55%;
+          &_text {
+            font-size: 30px;
+            color: #1e1e1e;
+            font-weight: 300;
+            opacity: 1;
+          }
+        }
+        &_links {
+          margin-top: 30px;
+          display: flex;
+          &_link {
+            padding-right: 20px;
+            img {
+              width: 40px;
+            }
+          }
+        }
+      }
+      &_rightside {
+        width: 40%;
+        &_image {
+          position: relative;
+
+          &_picture {
+            margin-top: 7%;
+            padding-right: 20%;
+            z-index: 2;
+            width: 650px;
+            top: 0;
+            left: 0;
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .m_firstpage {
+    display: none !important;
+  }
+}
+@media only screen and (max-width: 1023px) {
+  .firstpage {
+    display: none;
+  }
+  .m_firstpage {
+    &_container {
+      display: flex;
+      align-items: center;
+      background-image: url("../../assets/shape.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: top;
+      width: 100%;
+      height: 100vh;
+      justify-content: center;
+      flex-direction: column;
+      &_base {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        &_leftside {
+          z-index: 1;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          &_image {
+            width: 300px;
+          }
+          &_buttons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            &_button {
+              border-radius: 5px;
+              margin-right: 10px;
+              margin-left: 10px;
+              background-color: #f1f1f1;
+              color: #000000;
+              font-size: 15px;
+              width: 150px;
+              font-weight: 500;
+              cursor: pointer;
+              transition: 0.3s;
+              &:hover {
+                background-color: #000000;
+                color: #ffffff;
+              }
+            }
+          }
+          &_title {
+            text-align: center;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 0.2;
+            color: #ffffff;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            margin-top: 5px;
+
+            &_text {
+              text-align: center;
+              align-items: center;
+              width: 100%;
+              text-align: center;
+              line-height: 0.1em;
+              margin: 10px 0 5px;
+              display: flex;
+              flex-direction: row;
+              &_line {
+                display: flex;
+                width: 20px;
+                margin-right: 5px;
+                margin-left: 5px;
+                height: 3px;
+                background-color: #ffffff;
+                vertical-align: middle;
+              }
+            }
+          }
+          &_me {
+            line-height: 2;
+            &_name {
+              text-align: center;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              flex-wrap: wrap;
+              margin-top: 10px;
+              font-size: 19px;
+              color: #232e35;
+              font-weight: bold;
+              &_surname {
+                color: #232e35;
+              }
+            }
+          }
+          &_description {
+            line-height: 1.4;
+            width: 80%;
+            text-align: center;
+            &_text {
+              font-size: 17px;
+              color: #1e1e1e;
+              font-weight: 300;
+              opacity: 1;
+            }
+          }
+          &_links {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            &_link {
+              img {
+                margin-left: 10px;
+                margin-right: 10px;
+                width: 30px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
