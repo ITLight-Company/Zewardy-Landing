@@ -22,10 +22,11 @@ p {
     display: flex;
     align-content: space-around;
     justify-content: space-between;
+    position: fixed;
 
     &_container {
       min-height: 50px;
-      margin-top: 10px;
+      margin-top: 40px;
       align-items: center;
       display: flex;
       justify-content: space-between;
