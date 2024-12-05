@@ -163,6 +163,14 @@
           flex-direction: column;
           &_image {
             width: 300px;
+            &_picture {
+              margin-top: 7%;
+
+              z-index: 2;
+              width: 100%;
+              top: 0;
+              left: 0;
+            }
           }
           &_buttons {
             margin-top: 20px;

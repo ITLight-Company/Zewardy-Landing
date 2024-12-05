@@ -1,17 +1,19 @@
 import { Component } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'app-main-content',
   standalone: true,
-  imports: [RouterModule, CommonModule],
+  imports: [RouterModule, CommonModule, NgOptimizedImage],
   templateUrl: './main-content.component.html',
   styleUrls: ['./main-content.component.scss'],
 })
 export class MainContentComponent {
   phone_mockup = 'assets/zewardy_app.png';
   m_phone_mockup = 'assets/m_zewardy_app.png';
+  ios_button = '../../assets/app_store_button.png';
+  android_button = '../../assets/google_play_button.png';
   isMenuOpen: boolean = false;
 
   constructor(public router: Router) {}
