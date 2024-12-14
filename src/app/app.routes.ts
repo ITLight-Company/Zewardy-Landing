@@ -3,8 +3,7 @@ import { MainContentComponent } from './main-content/main-content.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' }, // Domyślny routing
-  { path: 'home', component: MainContentComponent },
+  { path: '', component: MainContentComponent }, // Strona główna jako domyślna
   { path: 'privacy-policy', component: PrivacyPolicyComponent },
-  { path: '**', redirectTo: '' },
+  { path: '**', redirectTo: '' }, // Przekierowanie dla nieistniejących ścieżek
 ];
