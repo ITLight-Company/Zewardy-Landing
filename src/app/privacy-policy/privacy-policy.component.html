@@ -14,8 +14,8 @@
         <div class="navbar_container_links">
           <a
             class="navbar_container_links_link"
-            [class.font-bold]="isActive('/home')"
-            [routerLink]="'/home'"
+            [class.font-bold]="isActive('/')"
+            [routerLink]="'/'"
           >
             Home
           </a>
@@ -106,7 +106,7 @@
           <div class="grid gap-4" style="background-color: #ffffff">
             <a
               class="navbar_container_links_link"
-              [routerLink]="'/home'"
+              [routerLink]="'/'"
               (click)="closeMenu()"
               >Home</a
             >
