@@ -29,67 +29,27 @@
   </div>
 </header>
 
-<main>
-  <section class="hero">
-    <div class="hero__content">
-      <h1 class="hero__title">{{ 'HOME.HERO_TITLE' | translate }}</h1>
-      <p class="hero__subtitle">{{ 'HOME.HERO_SUBTITLE' | translate }}</p>
-      <div class="hero__actions">
-        <a href="https://play.google.com/store/apps/details?id=com.itlight.zewardy" class="hero__btn hero__btn--primary">
-          <svg style="width: 24px; height: 24px; margin-right: 12px; fill: currentColor;" viewBox="0 0 24 24">
-            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z"/>
-          </svg>
-          {{ 'HOME.HERO_DOWNLOAD' | translate }}
+<main class="page-content text-content">
+  <div class="text-card">
+    <div class="contact_title" style="text-align: center">
+      <h1 style="color: #0f172a; margin-bottom: 12px">{{ 'CONTACT.TITLE' | translate }}</h1>
+      <p style="color: #64748b; font-size: 1.1rem; max-width: 600px; margin: 0 auto; line-height: 1.6">
+        {{ 'CONTACT.SUBTITLE' | translate }}
+      </p>
+    </div>
+
+    <div class="contact_info" style="margin-top: 48px; border-top: 1px solid #e2e8f0; padding-top: 48px; text-align: center">
+      <div style="background: #f8fafc; border-radius: 12px; padding: 40px 24px; max-width: 400px; margin: 0 auto;">
+        <svg style="width: 48px; height: 48px; color: #4f46e5; margin: 0 auto 20px;" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+        </svg>
+        <h3 style="color: #0f172a; font-size: 1.25rem; font-weight: 600; margin: 0 0 8px;">{{ 'CONTACT.EMAIL_LABEL' | translate }}</h3>
+        <a href="mailto:contact@zewardy.com" style="display: inline-block; background: #4f46e5; color: white; padding: 12px 24px; border-radius: 8px; font-weight: 600; text-decoration: none; margin-top: 16px; transition: background 0.2s">
+          {{ 'CONTACT.BTN_SEND' | translate }}
         </a>
       </div>
     </div>
-    <div class="hero__image-wrapper">
-      <div class="app-mockup">
-        <img src="../../assets/app-mockup.png" alt="Zewardy App Screenshot" class="app-mockup__img" onError="this.style.display='none'">
-        <div class="app-mockup__placeholder" *ngIf="false">App Preview</div>
-      </div>
-    </div>
-  </section>
-
-  <section class="trust-bar">
-    <div class="trust-bar__inner">
-      <p class="trust-bar__text">{{ 'HOME.TRUST_TITLE' | translate }}</p>
-      <div class="trust-bar__stats">
-        <div class="stat-item">
-          <span class="stat-item__value">4.8/5</span>
-          <span class="stat-item__label">Google Play</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-item__value">10k+</span>
-          <span class="stat-item__label">Downloads</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="features">
-    <div class="features__header">
-      <h2 class="features__title">{{ 'HOME.FEATURES_TITLE' | translate }}</h2>
-    </div>
-    <div class="features__grid">
-      <div class="feature-card">
-        <div class="feature-card__icon">🎁</div>
-        <h3 class="feature-card__title">{{ 'HOME.FEATURE_1_TITLE' | translate }}</h3>
-        <p class="feature-card__desc">{{ 'HOME.FEATURE_1_DESC' | translate }}</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-card__icon">💰</div>
-        <h3 class="feature-card__title">{{ 'HOME.FEATURE_2_TITLE' | translate }}</h3>
-        <p class="feature-card__desc">{{ 'HOME.FEATURE_2_DESC' | translate }}</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-card__icon">🧠</div>
-        <h3 class="feature-card__title">{{ 'HOME.FEATURE_3_TITLE' | translate }}</h3>
-        <p class="feature-card__desc">{{ 'HOME.FEATURE_3_DESC' | translate }}</p>
-      </div>
-    </div>
-  </section>
-
+  </div>
 </main>
 
 <footer class="footer">

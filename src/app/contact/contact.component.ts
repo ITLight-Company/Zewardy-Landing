@@ -4,25 +4,23 @@ import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
-  selector: 'app-privacy-policy',
+  selector: 'app-contact',
   standalone: true,
   imports: [RouterModule, CommonModule, TranslateModule],
-  templateUrl: './privacy-policy.component.html',
-  styleUrls: ['./privacy-policy.component.scss']
+  templateUrl: './contact.component.html',
+  styleUrls: ['./contact.component.scss'],
 })
-export class PrivacyPolicyComponent {
+export class ContactComponent {
   isMenuOpen: boolean = false;
 
-  constructor(private router: Router) {}
+  constructor(public router: Router) {}
 
-  isActive(route: string): boolean {
-    return this.router.url === route;
+  isActive(link: string): boolean {
+    return this.router.url === link;
   }
-
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
   }
-
   closeMenu() {
     this.isMenuOpen = false;
   }

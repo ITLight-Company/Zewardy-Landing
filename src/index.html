@@ -1,13 +1,141 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Zewardy</title>
-    <base href="/" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" type="image/x-icon" href="logo.ico" />
-  </head>
-  <body>
-    <app-root></app-root>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <title>Zewardy | Odkrywaj Najlepsze Quizy i Zgarniaj Nagrody w Aplikacji</title>
+  
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  
+  <meta name="theme-color" content="#4F46E5">
+  
+  <!-- SEO / Odkrywalność (Ameryka Południowa, Afryka, Global) -->
+  <meta name="description" content="Pobierz Zewardy na Androida! Najbardziej wciągająca mobilna gra z quizami, która pozwala zdobywać nagrody za poprawne odpowiedzi. Rozwiązuj darmowe quizy i rywalizuj o prawdziwe nagrody. Dostępne w Afryce, w tym Nigeria, RPA, oraz Ameryce Południowej, jak Kolumbia i Brazylia!">
+  <meta name="keywords" content="Zewardy app, play quizzes, answer questions, earn rewards, free, Google Play, Android app, app real rewards, free quizzes smartphone app, Africa, Nigeria, South Africa, South America, Brazil, Colombia, play and earn, trivia">
+  
+  <!-- Open Graph (FB, LinkedIn, WhatsApp) -->
+  <meta property="og:title" content="Zewardy - Quiz & Rewards na Androida">
+  <meta property="og:description" content="Nowa aplikacja z quizami - rozwiązuj ciekawostki, zbieraj punkty, wygrywaj nagrody. Zagraj na Androidzie za darmo!">
+  <meta property="og:image" content="https://zewardy.com/assets/og-image.jpg"> 
+  <meta property="og:url" content="https://zewardy.com/">
+  <meta property="og:type" content="website">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Zewardy - Play Quizzes & Earn Rewards">
+  <meta name="twitter:description" content="Graj w darmowe quizy i zdobywaj nagrody. Dostępne teraz na Androida.">
+
+    <!-- Hreflang dla wszystkich krajów Ameryki Płd. i Afryki -->
+  <link rel="alternate" hreflang="x-default" href="https://zewardy.com/" />
+  <link rel="alternate" hreflang="es-AR" href="https://zewardy.com/" />
+  <link rel="alternate" hreflang="es-BO" href="https://zewardy.com/" />
+  <link rel="alternate" hreflang="es-CL" href="https://zewardy.com/" />
+  <link rel="alternate" hreflang="es-CO" href="https://zewardy.com/" />
+  <link rel="alternate" hreflang="es-EC" href="https://zewardy.com/" />
+  <link rel="alternate" hreflang="es-PE" href="https://zewardy.com/" />
+  <link rel="alternate" hreflang="es-PY" href="https://zewardy.com/" />
+  <link rel="alternate" hreflang="es-UY" href="https://zewardy.com/" />
+  <link rel="alternate" hreflang="es-VE" href="https://zewardy.com/" />
+  <link rel="alternate" hreflang="pt-BR" href="https://zewardy.com/" />
+  <link rel="alternate" hreflang="en-GY" href="https://zewardy.com/" />
+  <link rel="alternate" hreflang="nl-SR" href="https://zewardy.com/" />
+  <link rel="alternate" hreflang="fr-DZ" href="https://zewardy.com/" />
+  <link rel="alternate" hreflang="fr-BJ" href="https://zewardy.com/" />
+  <link rel="alternate" hreflang="fr-BF" href="https://zewardy.com/" />
+  <link rel="alternate" hreflang="fr-BI" href="https://zewardy.com/" />
+  <link rel="alternate" hreflang="fr-CM" href="https://zewardy.com/" />
+  <link rel="alternate" hreflang="fr-CF" href="https://zewardy.com/" />
+  <link rel="alternate" hreflang="fr-TD" href="https://zewardy.com/" />
+  <link rel="alternate" hreflang="fr-KM" href="https://zewardy.com/" />
+  <link rel="alternate" hreflang="fr-CG" href="https://zewardy.com/" />
+  <link rel="alternate" hreflang="fr-CD" href="https://zewardy.com/" />
+  <link rel="alternate" hreflang="fr-DJ" href="https://zewardy.com/" />
+  <link rel="alternate" hreflang="fr-GQ" href="https://zewardy.com/" />
+  <link rel="alternate" hreflang="fr-GA" href="https://zewardy.com/" />
+  <link rel="alternate" hreflang="fr-GN" href="https://zewardy.com/" />
+  <link rel="alternate" hreflang="fr-CI" href="https://zewardy.com/" />
+  <link rel="alternate" hreflang="fr-MG" href="https://zewardy.com/" />
+  <link rel="alternate" hreflang="fr-ML" href="https://zewardy.com/" />
+  <link rel="alternate" hreflang="fr-MR" href="https://zewardy.com/" />
+  <link rel="alternate" hreflang="fr-MU" href="https://zewardy.com/" />
+  <link rel="alternate" hreflang="fr-MA" href="https://zewardy.com/" />
+  <link rel="alternate" hreflang="fr-NE" href="https://zewardy.com/" />
+  <link rel="alternate" hreflang="fr-RW" href="https://zewardy.com/" />
+  <link rel="alternate" hreflang="fr-SN" href="https://zewardy.com/" />
+  <link rel="alternate" hreflang="fr-TG" href="https://zewardy.com/" />
+  <link rel="alternate" hreflang="fr-TN" href="https://zewardy.com/" />
+  <link rel="alternate" hreflang="en-BW" href="https://zewardy.com/" />
+  <link rel="alternate" hreflang="en-CM" href="https://zewardy.com/" />
+  <link rel="alternate" hreflang="en-GM" href="https://zewardy.com/" />
+  <link rel="alternate" hreflang="en-GH" href="https://zewardy.com/" />
+  <link rel="alternate" hreflang="en-KE" href="https://zewardy.com/" />
+  <link rel="alternate" hreflang="en-LS" href="https://zewardy.com/" />
+  <link rel="alternate" hreflang="en-LR" href="https://zewardy.com/" />
+  <link rel="alternate" hreflang="en-MW" href="https://zewardy.com/" />
+  <link rel="alternate" hreflang="en-MU" href="https://zewardy.com/" />
+  <link rel="alternate" hreflang="en-NA" href="https://zewardy.com/" />
+  <link rel="alternate" hreflang="en-NG" href="https://zewardy.com/" />
+  <link rel="alternate" hreflang="en-RW" href="https://zewardy.com/" />
+  <link rel="alternate" hreflang="en-SC" href="https://zewardy.com/" />
+  <link rel="alternate" hreflang="en-SL" href="https://zewardy.com/" />
+  <link rel="alternate" hreflang="en-ZA" href="https://zewardy.com/" />
+  <link rel="alternate" hreflang="en-SS" href="https://zewardy.com/" />
+  <link rel="alternate" hreflang="en-SD" href="https://zewardy.com/" />
+  <link rel="alternate" hreflang="en-TZ" href="https://zewardy.com/" />
+  <link rel="alternate" hreflang="en-UG" href="https://zewardy.com/" />
+  <link rel="alternate" hreflang="en-ZM" href="https://zewardy.com/" />
+  <link rel="alternate" hreflang="en-ZW" href="https://zewardy.com/" />
+  <link rel="alternate" hreflang="pt-AO" href="https://zewardy.com/" />
+  <link rel="alternate" hreflang="pt-CV" href="https://zewardy.com/" />
+  <link rel="alternate" hreflang="pt-GW" href="https://zewardy.com/" />
+  <link rel="alternate" hreflang="pt-MZ" href="https://zewardy.com/" />
+  <link rel="alternate" hreflang="pt-ST" href="https://zewardy.com/" />
+  <link rel="alternate" hreflang="ar-DZ" href="https://zewardy.com/" />
+  <link rel="alternate" hreflang="ar-TD" href="https://zewardy.com/" />
+  <link rel="alternate" hreflang="ar-KM" href="https://zewardy.com/" />
+  <link rel="alternate" hreflang="ar-DJ" href="https://zewardy.com/" />
+  <link rel="alternate" hreflang="ar-EG" href="https://zewardy.com/" />
+  <link rel="alternate" hreflang="ar-ER" href="https://zewardy.com/" />
+  <link rel="alternate" hreflang="ar-LY" href="https://zewardy.com/" />
+  <link rel="alternate" hreflang="ar-MR" href="https://zewardy.com/" />
+  <link rel="alternate" hreflang="ar-MA" href="https://zewardy.com/" />
+  <link rel="alternate" hreflang="ar-SO" href="https://zewardy.com/" />
+  <link rel="alternate" hreflang="ar-SD" href="https://zewardy.com/" />
+  <link rel="alternate" hreflang="ar-TN" href="https://zewardy.com/" />
+  <link rel="alternate" hreflang="sw-TZ" href="https://zewardy.com/" />
+  <link rel="alternate" hreflang="sw-KE" href="https://zewardy.com/" />
+  <link rel="alternate" hreflang="sw-UG" href="https://zewardy.com/" />
+  <link rel="alternate" hreflang="sw-RW" href="https://zewardy.com/" />
+  <link rel="alternate" hreflang="es-GQ" href="https://zewardy.com/" />
+  <link rel="alternate" hreflang="am-ET" href="https://zewardy.com/" />
+
+  <!-- Inter UI Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1PYQGCPQNS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    
+    // Default Consent Mode setup using Consent Mode v2 
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'analytics_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied'
+    });
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-1PYQGCPQNS');
+  </script>
+
+</head>
+<body>
+  <app-root></app-root>
+</body>
 </html>

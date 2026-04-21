@@ -1,0 +1,37 @@
+{
+  "NAVBAR": {
+    "HOME": "Inicio",
+    "PRIVACY_POLICY": "Política de Privacidad",
+    "CONTACT": "Contacto",
+    "DOWNLOAD": "Descargar Gratis",
+    "DOWNLOAD_MOBILE": "Descargar Gratis →"
+  },
+  "FOOTER": {
+    "COPYRIGHT": "© 2026 Zewardy por ITLight. Todos los derechos reservados.",
+    "FACEBOOK_PAGE": "Página de Facebook"
+  },
+  "HOME": {
+    "HERO_TITLE": "Juega y Gana con Zewardy",
+    "HERO_SUBTITLE": "Responde cuestionarios, acumula puntos y retira recompensas reales directamente a tu cuenta.",
+    "HERO_DOWNLOAD": "Obtén Zewardy Ahora",
+    "TRUST_TITLE": "Confiado por jugadores en todo el mundo",
+    "FEATURES_TITLE": "Por qué te encantará Zewardy",
+    "FEATURE_1_TITLE": "100% Gratis",
+    "FEATURE_1_DESC": "No se requieren depósitos, jugar a los cuestionarios es completamente gratis.",
+    "FEATURE_2_TITLE": "Recompensas Reales",
+    "FEATURE_2_DESC": "Convierte tus puntos de cuestionario en recompensas del mundo real y tarjetas de regalo.",
+    "FEATURE_3_TITLE": "Temas Divertidos",
+    "FEATURE_3_DESC": "Miles de preguntas en decenas de categorías."
+  },
+  "CONTACT": {
+    "TITLE": "Contáctanos",
+    "SUBTITLE": "¿Tienes preguntas? ¿Quieres compartir tus comentarios? Nos encantaría saber de ti.",
+    "EMAIL_LABEL": "Envíanos un correo electrónico",
+    "BTN_SEND": "Escribir Mensaje"
+  },
+  "COOKIES": {
+    "TITLE": "Valoramos tu privacidad",
+    "TEXT": "Utilizamos cookies para mejorar tu experiencia, analizar el tráfico y mostrarte contenido personalizado.",
+    "BTN_ACCEPT": "Aceptar todo"
+  }
+}

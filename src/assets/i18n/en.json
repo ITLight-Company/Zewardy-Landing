@@ -1,0 +1,37 @@
+{
+  "NAVBAR": {
+    "HOME": "Home",
+    "PRIVACY_POLICY": "Privacy Policy",
+    "CONTACT": "Contact",
+    "DOWNLOAD": "Download Free",
+    "DOWNLOAD_MOBILE": "Download Free →"
+  },
+  "FOOTER": {
+    "COPYRIGHT": "© 2026 Zewardy by ITLight. All rights reserved.",
+    "FACEBOOK_PAGE": "Facebook Page"
+  },
+  "HOME": {
+    "HERO_TITLE": "Play and Earn with Zewardy",
+    "HERO_SUBTITLE": "Answer quizzes, collect points, and withdraw real rewards directly to your account.",
+    "HERO_DOWNLOAD": "Get Zewardy Now",
+    "TRUST_TITLE": "Trusted by players across the globe",
+    "FEATURES_TITLE": "Why you will love Zewardy",
+    "FEATURE_1_TITLE": "100% Free",
+    "FEATURE_1_DESC": "No deposits required, completely free to play quizzes.",
+    "FEATURE_2_TITLE": "Real Rewards",
+    "FEATURE_2_DESC": "Convert your quiz points into real-world rewards and gift cards.",
+    "FEATURE_3_TITLE": "Fun Topics",
+    "FEATURE_3_DESC": "Thousands of questions across dozens of categories."
+  },
+  "CONTACT": {
+    "TITLE": "Contact Us",
+    "SUBTITLE": "Have questions? Want to share feedback? We'd love to hear from you.",
+    "EMAIL_LABEL": "Send us an email",
+    "BTN_SEND": "Write Message"
+  },
+  "COOKIES": {
+    "TITLE": "We value your privacy",
+    "TEXT": "We use cookies to enhance your experience, analyze traffic, and deliver personalized content via Google Analytics & Ads.",
+    "BTN_ACCEPT": "Accept All"
+  }
+}
