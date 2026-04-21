@@ -32,60 +32,72 @@
 <main>
   <section class="hero">
     <div class="hero__content">
-      <h1 class="hero__title">{{ 'HOME.HERO_TITLE' | translate }}</h1>
-      <p class="hero__subtitle">{{ 'HOME.HERO_SUBTITLE' | translate }}</p>
+      <div class="hero__eyebrow">
+        <span class="hero__eyebrow-badge">Zewardy 1.0</span>
+      </div>
+      <h1 class="hero__title">
+        <span class="hero__title-gradient">{{ 'HOME.HERO_TITLE' | translate }}</span>
+      </h1>
+      <p class="hero__desc">{{ 'HOME.HERO_SUBTITLE' | translate }}</p>
+      
       <div class="hero__actions">
-        <a href="https://play.google.com/store/apps/details?id=com.itlight.zewardy" class="hero__btn hero__btn--primary">
-          <svg style="width: 24px; height: 24px; margin-right: 12px; fill: currentColor;" viewBox="0 0 24 24">
-            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z"/>
-          </svg>
-          {{ 'HOME.HERO_DOWNLOAD' | translate }}
+        <a href="https://play.google.com/store/apps/details?id=com.itlight.zewardy" class="hero__gp-btn" target="_blank" rel="noopener noreferrer">
+          <img src="../../assets/google_play_button.png" alt="Get it on Google Play" />
         </a>
+        <div class="hero__rating">
+          <div class="hero__stars">★★★★★</div>
+          <div class="hero__rating-text">4.8/5 on Google Play Store</div>
+        </div>
       </div>
     </div>
-    <div class="hero__image-wrapper">
-      <div class="app-mockup">
-        <img src="../../assets/app-mockup.png" alt="Zewardy App Screenshot" class="app-mockup__img" onError="this.style.display='none'">
-        <div class="app-mockup__placeholder" *ngIf="false">App Preview</div>
+    
+    <div class="hero__visual">
+      <div class="hero__phone-wrap">
+        <div class="hero__phone-glow"></div>
+        <img src="../../assets/Screenshot_1776522854.png" alt="Zewardy App" class="hero__phone-img" />
       </div>
     </div>
   </section>
 
   <section class="trust-bar">
     <div class="trust-bar__inner">
-      <p class="trust-bar__text">{{ 'HOME.TRUST_TITLE' | translate }}</p>
-      <div class="trust-bar__stats">
-        <div class="stat-item">
-          <span class="stat-item__value">4.8/5</span>
-          <span class="stat-item__label">Google Play</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-item__value">10k+</span>
-          <span class="stat-item__label">Downloads</span>
-        </div>
+      <div class="trust-bar__item">
+        <strong>{{ 'HOME.TRUST_TITLE' | translate }}</strong>
+      </div>
+      <div class="trust-bar__divider"></div>
+      <div class="trust-bar__item">
+        <strong>4.8/5</strong>
+        <span>Google Play</span>
+      </div>
+      <div class="trust-bar__divider"></div>
+      <div class="trust-bar__item">
+        <strong>10k+</strong>
+        <span>Downloads</span>
       </div>
     </div>
   </section>
 
   <section class="features">
-    <div class="features__header">
-      <h2 class="features__title">{{ 'HOME.FEATURES_TITLE' | translate }}</h2>
-    </div>
-    <div class="features__grid">
-      <div class="feature-card">
-        <div class="feature-card__icon">🎁</div>
-        <h3 class="feature-card__title">{{ 'HOME.FEATURE_1_TITLE' | translate }}</h3>
-        <p class="feature-card__desc">{{ 'HOME.FEATURE_1_DESC' | translate }}</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-card__icon">💰</div>
-        <h3 class="feature-card__title">{{ 'HOME.FEATURE_2_TITLE' | translate }}</h3>
-        <p class="feature-card__desc">{{ 'HOME.FEATURE_2_DESC' | translate }}</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-card__icon">🧠</div>
-        <h3 class="feature-card__title">{{ 'HOME.FEATURE_3_TITLE' | translate }}</h3>
-        <p class="feature-card__desc">{{ 'HOME.FEATURE_3_DESC' | translate }}</p>
+    <div class="features__inner">
+      <h2 class="section-heading section-heading--light">{{ 'HOME.FEATURES_TITLE' | translate }}</h2>
+      <p class="section-sub section-sub--light">Discover why players love our app.</p>
+      
+      <div class="features__grid">
+        <div class="feature">
+          <div class="feature__icon">🎁</div>
+          <h3 class="feature__title">{{ 'HOME.FEATURE_1_TITLE' | translate }}</h3>
+          <p class="feature__desc">{{ 'HOME.FEATURE_1_DESC' | translate }}</p>
+        </div>
+        <div class="feature">
+          <div class="feature__icon">💰</div>
+          <h3 class="feature__title">{{ 'HOME.FEATURE_2_TITLE' | translate }}</h3>
+          <p class="feature__desc">{{ 'HOME.FEATURE_2_DESC' | translate }}</p>
+        </div>
+        <div class="feature">
+          <div class="feature__icon">🧠</div>
+          <h3 class="feature__title">{{ 'HOME.FEATURE_3_TITLE' | translate }}</h3>
+          <p class="feature__desc">{{ 'HOME.FEATURE_3_DESC' | translate }}</p>
+        </div>
       </div>
     </div>
   </section>
