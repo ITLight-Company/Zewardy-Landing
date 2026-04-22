@@ -1,0 +1,108 @@
+<nav class="navbar">
+  <div class="navbar__inner">
+    <a [routerLink]="'/'" class="navbar__logo">
+      <img src="../../assets/logo.svg" alt="Zewardy" />
+    </a>
+    <div class="navbar__links">
+      <a class="navbar__link" [class.navbar__link--active]="isActive('/')" [routerLink]="'/'">{{ 'NAVBAR.HOME' | translate }}</a>
+      <a class="navbar__link" [class.navbar__link--active]="isActive('/privacy-policy')" [routerLink]="'/privacy-policy'">{{ 'NAVBAR.PRIVACY_POLICY' | translate }}</a>
+      <a class="navbar__link" [class.navbar__link--active]="isActive('/contact')" [routerLink]="'/contact'">{{ 'NAVBAR.CONTACT' | translate }}</a>
+      <a href="https://play.google.com/store/apps/details?id=com.itlight.zewardy" class="navbar__cta">{{ 'NAVBAR.DOWNLOAD' | translate }}</a>
+    </div>
+  </div>
+</nav>
+
+<header class="mobile-header" [ngClass]="{ 'mobile-header--open': isMenuOpen }">
+  <div class="mobile-header__bar">
+    <a [routerLink]="'/'" class="mobile-header__logo">
+      <img src="../../assets/logo.svg" alt="Zewardy" />
+    </a>
+    <button class="mobile-header__burger" (click)="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-header__menu" [ngClass]="{ hidden: !isMenuOpen }">
+    <a class="mobile-header__link" [routerLink]="'/'" (click)="closeMenu()">{{ 'NAVBAR.HOME' | translate }}</a>
+    <a class="mobile-header__link" [routerLink]="'/privacy-policy'" (click)="closeMenu()">{{ 'NAVBAR.PRIVACY_POLICY' | translate }}</a>
+    <a class="mobile-header__link" [routerLink]="'/contact'" (click)="closeMenu()">{{ 'NAVBAR.CONTACT' | translate }}</a>
+    <a href="https://play.google.com/store/apps/details?id=com.itlight.zewardy" class="mobile-header__download" (click)="closeMenu()">{{ 'NAVBAR.DOWNLOAD_MOBILE' | translate }}</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="hero__content">
+      <h1 class="hero__title">{{ 'HOME.HERO_TITLE' | translate }}</h1>
+      <p class="hero__subtitle">{{ 'HOME.HERO_SUBTITLE' | translate }}</p>
+      <div class="hero__actions">
+        <a href="https://play.google.com/store/apps/details?id=com.itlight.zewardy" class="hero__btn hero__btn--primary">
+          <svg style="width: 24px; height: 24px; margin-right: 12px; fill: currentColor;" viewBox="0 0 24 24">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z"/>
+          </svg>
+          {{ 'HOME.HERO_DOWNLOAD' | translate }}
+        </a>
+      </div>
+    </div>
+    <div class="hero__image-wrapper">
+      <div class="app-mockup">
+        <img src="../../assets/app-mockup.png" alt="Zewardy App Screenshot" class="app-mockup__img" onError="this.style.display='none'">
+        <div class="app-mockup__placeholder" *ngIf="false">App Preview</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="trust-bar">
+    <div class="trust-bar__inner">
+      <p class="trust-bar__text">{{ 'HOME.TRUST_TITLE' | translate }}</p>
+      <div class="trust-bar__stats">
+        <div class="stat-item">
+          <span class="stat-item__value">4.8/5</span>
+          <span class="stat-item__label">Google Play</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-item__value">10k+</span>
+          <span class="stat-item__label">Downloads</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="features__header">
+      <h2 class="features__title">{{ 'HOME.FEATURES_TITLE' | translate }}</h2>
+    </div>
+    <div class="features__grid">
+      <div class="feature-card">
+        <div class="feature-card__icon">🎁</div>
+        <h3 class="feature-card__title">{{ 'HOME.FEATURE_1_TITLE' | translate }}</h3>
+        <p class="feature-card__desc">{{ 'HOME.FEATURE_1_DESC' | translate }}</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card__icon">💰</div>
+        <h3 class="feature-card__title">{{ 'HOME.FEATURE_2_TITLE' | translate }}</h3>
+        <p class="feature-card__desc">{{ 'HOME.FEATURE_2_DESC' | translate }}</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card__icon">🧠</div>
+        <h3 class="feature-card__title">{{ 'HOME.FEATURE_3_TITLE' | translate }}</h3>
+        <p class="feature-card__desc">{{ 'HOME.FEATURE_3_DESC' | translate }}</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__left">
+      <img src="../../assets/logo.svg" alt="Zewardy" class="footer__logo" />
+      <p class="footer__copy">{{ 'FOOTER.COPYRIGHT' | translate }}</p>
+    </div>
+    <div class="footer__links">
+      <a class="footer__link" [routerLink]="'/'">{{ 'NAVBAR.HOME' | translate }}</a>
+      <a class="footer__link" [routerLink]="'/privacy-policy'">{{ 'NAVBAR.PRIVACY_POLICY' | translate }}</a>
+      <a class="footer__link" [routerLink]="'/contact'">{{ 'NAVBAR.CONTACT' | translate }}</a>
+      <a class="footer__link" href="https://www.facebook.com/profile.php?id=61569753304004" target="_blank" rel="noopener noreferrer">{{ 'FOOTER.FACEBOOK_PAGE' | translate }}</a>
+    </div>
+  </div>
+</footer>
