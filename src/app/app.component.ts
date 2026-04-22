@@ -1,7 +1,9 @@
-import { Component, OnInit, PLATFORM_ID, Inject } from '@angular/core';
+import { Component, OnInit, PLATFORM_ID, Inject, OnDestroy } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
-import { RouterOutlet, RouterModule } from '@angular/router';
+import { RouterOutlet, RouterModule, Router, NavigationEnd, ActivatedRoute } from '@angular/router';
 import { TranslateService, TranslateModule } from '@ngx-translate/core';
+import { filter } from 'rxjs/operators';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -10,21 +12,18 @@ import { TranslateService, TranslateModule } from '@ngx-translate/core';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, OnDestroy {
   title = 'Zewardy-Landing';
   cookiesAccepted = true;
+  private routerSub!: Subscription;
 
   constructor(
     private translate: TranslateService,
+    private router: Router,
+    private route: ActivatedRoute,
     @Inject(PLATFORM_ID) private platformId: Object
   ) {
-    if (isPlatformBrowser(this.platformId)) {
-      const browserLang = navigator.language || navigator.languages[0];
-      const langMatch = browserLang.match(/fr|es|pt|en/);
-      const lang = langMatch ? langMatch[0] : 'en';
-      translate.setDefaultLang('en');
-      translate.use(lang);
-    }
+    translate.setDefaultLang('en');
   }
 
   ngOnInit() {
@@ -34,6 +33,26 @@ export class AppComponent implements OnInit {
         this.cookiesAccepted = false;
       }
     }
+
+    // Dynamic language routing from URL params instead of navigator
+    this.routerSub = this.router.events
+      .pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe(() => {
+        let firstChild = this.route.root.firstChild;
+        let lang = 'en'; // default
+        
+        while (firstChild) {
+          if (firstChild.snapshot.paramMap.has('lang')) {
+            const urlLang = firstChild.snapshot.paramMap.get('lang');
+            if (['en', 'es', 'pt', 'fr'].includes(urlLang || '')) {
+              lang = urlLang!;
+            }
+          }
+          firstChild = firstChild.firstChild;
+        }
+
+        this.translate.use(lang);
+      });
   }
 
   acceptCookies() {
@@ -53,4 +72,9 @@ export class AppComponent implements OnInit {
       this.cookiesAccepted = true;
     }
   }
+
+  ngOnDestroy() {
+    if(this.routerSub) this.routerSub.unsubscribe();
+  }
 }
+
