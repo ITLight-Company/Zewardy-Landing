@@ -46,5 +46,28 @@ export class SeoService {
     }
     link.setAttribute('href', url);
   }
+
+  setHreflangTags(urlMap: { lang: string, url: string }[]) {
+    const links = this.document.querySelectorAll("link[rel='alternate'][hreflang]");
+    links.forEach(link => link.remove());
+
+    urlMap.forEach(map => {
+      const link: HTMLLinkElement = this.document.createElement('link');
+      link.setAttribute('rel', 'alternate');
+      link.setAttribute('hreflang', map.lang);
+      link.setAttribute('href', map.url);
+      this.document.head.appendChild(link);
+    });
+  }
+
+  setStructuredData(schema: any) {
+    let script = this.document.querySelector('script[type="application/ld+json"]');
+    if (!script) {
+      script = this.document.createElement('script');
+      script.setAttribute('type', 'application/ld+json');
+      this.document.head.appendChild(script);
+    }
+    script.textContent = JSON.stringify(schema);
+  }
 }
 

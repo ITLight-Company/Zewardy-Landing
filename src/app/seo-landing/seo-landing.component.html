@@ -68,17 +68,43 @@
     </div>
     
     <article class="long-tail-seo">
-      <h3>Why choose Zewardy for {{ content?.keyword }}?</h3>
-      <p>
-        Finding a legitimate way to <strong>{{ content?.keyword }}</strong> can be difficult in 2025. 
-        With Zewardy, you are guaranteed fast payouts, a variety of easy tasks, and 24/7 support. 
-        Whether you are waiting for a bus, relaxing at home, or on a break, you can consistently 
-        earn rewards directly to your preferred payment method.
-      </p>
-      <p>
-        Unlike other platforms, we focus on user transparency and high payout rates. Enjoy completing surveys, 
-        playing the latest games, and referring friends to maximize your earnings globally.
-      </p>
+      <h2>{{ content?.articleH2 }}</h2>
+      <p>{{ content?.articleP1 }}</p>
+
+      <h3>{{ content?.articleH3_1 }}</h3>
+      <p>{{ content?.articleP2 }}</p>
+      
+      <!-- Compare Table -->
+      <div class="seo-table-container">
+        <h3>{{ content?.tables?.title }}</h3>
+        <table class="seo-table">
+          <thead>
+            <tr>
+              <th *ngFor="let col of content?.tables?.cols">{{ col }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td *ngFor="let item of content?.tables?.r1">{{ item }}</td>
+            </tr>
+            <tr>
+              <td *ngFor="let item of content?.tables?.r2">{{ item }}</td>
+            </tr>
+            <tr>
+              <td *ngFor="let item of content?.tables?.r3">{{ item }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- FAQ Array Injection -->
+      <div class="faq-container">
+        <h3>{{ content?.faqTitle }}</h3>
+        <div class="faq-item" *ngFor="let faq of content?.faqs">
+          <h4>{{ faq.q }}</h4>
+          <p>{{ faq.a }}</p>
+        </div>
+      </div>
     </article>
   </div>
 </main>

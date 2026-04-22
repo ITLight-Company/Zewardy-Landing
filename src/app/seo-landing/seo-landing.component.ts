@@ -44,16 +44,69 @@ export class SeoLandingComponent implements OnInit, OnDestroy {
     const data = SEO_CONTENT_DB[this.slug] ? (SEO_CONTENT_DB[this.slug][this.lang] || fallback) : fallback;
     
     this.content = data;
+    const currentUrl = `https://zewardy.com/${this.lang === 'en' ? '' : this.lang + '/'}article/${this.slug}`;
 
     this.seoService.updateSeoTags({
       title: data.title,
       description: data.desc,
       keywords: data.keyword + ', make money app, get paid to, zewardy, rewards',
       lang: this.lang,
-      url: `https://zewardy.com/${this.lang === 'en' ? '' : this.lang + '/'}article/${this.slug}`
+      url: currentUrl
     });
 
-    this.seoService.setCanonicalUrl(`https://zewardy.com/${this.lang === 'en' ? '' : this.lang + '/'}article/${this.slug}`);
+    this.seoService.setCanonicalUrl(currentUrl);
+
+    // Hreflang Tags (GEO Localization)
+    const hreflangMap = ['en', 'es', 'pt', 'fr'].map(l => {
+      // Map basic langs to specific target markets for Google GEO SEO
+      const geoLang = l === 'en' ? 'en-US' : l === 'es' ? 'es-ES' : l === 'pt' ? 'pt-BR' : 'fr-FR';
+      return {
+        lang: geoLang,
+        url: `https://zewardy.com/${l === 'en' ? '' : l + '/'}article/${this.slug}`
+      };
+    });
+    hreflangMap.push({ lang: 'x-default', url: `https://zewardy.com/article/${this.slug}` }); // Fallback
+    this.seoService.setHreflangTags(hreflangMap);
+
+    // AI & LLM Structured Data (AEO - Answer Engine Optimization)
+    // Feeds Perplexity, ChatGPT, Claude, and Google AI Overviews with raw machine data.
+    const schema = {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "SoftwareApplication",
+          "name": "Zewardy",
+          "applicationCategory": "FinanceApplication",
+          "operatingSystem": "Android",
+          "description": data.desc,
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          }
+        },
+        {
+          "@type": "Article",
+          "headline": data.title,
+          "description": data.desc,
+          "author": { "@type": "Organization", "name": "Zewardy" },
+          "publisher": { "@type": "Organization", "name": "Zewardy" },
+          "mainEntityOfPage": currentUrl
+        },
+        data.faqs ? {
+          "@type": "FAQPage",
+          "mainEntity": data.faqs.map((f: any) => ({
+            "@type": "Question",
+            "name": f.q,
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": f.a
+            }
+          }))
+        } : null
+      ].filter(Boolean)
+    };
+    this.seoService.setStructuredData(schema);
   }
 
   isActive(route: string): boolean {

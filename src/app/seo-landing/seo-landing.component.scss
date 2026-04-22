@@ -307,36 +307,98 @@ main {
   }
 
   .long-tail-seo {
-    background: $gray-light;
+    background: $white;
     padding: 50px;
     border-radius: 32px;
     border: 1px solid $gray-border;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
     max-width: 900px;
     margin: 0 auto;
 
-    h3 {
-      font-size: 1.7rem;
+    h2 {
+      font-size: 2rem;
       margin-bottom: 24px;
       color: $dark;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    h3 {
+      font-size: 1.7rem;
+      margin-top: 32px;
+      margin-bottom: 20px;
+      color: $purple;
       font-weight: 700;
       letter-spacing: -0.01em;
     }
 
-    p {
+    h4 {
+      font-size: 1.25rem;
       color: $dark-mid;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: $gray;
       line-height: 1.8;
       font-size: 1.1rem;
       margin-bottom: 24px;
       font-weight: 400;
+      
+      &:last-child { margin-bottom: 0; }
+    }
 
-      &:last-child {
-        margin-bottom: 0;
+    .seo-table-container {
+      margin: 40px 0;
+      overflow-x: auto;
+    }
+
+    .seo-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      background: $gray-light;
+      border-radius: 16px;
+      overflow: hidden;
+
+      th, td {
+        padding: 16px 20px;
+        border-bottom: 1px solid $gray-border;
+      }
+      
+      th {
+        background: $purple;
+        color: $white;
+        font-weight: 600;
+        font-size: 1.05rem;
       }
 
-      strong {
-        color: $dark;
-        font-weight: 700;
+      td {
+        color: $dark-mid;
+        font-weight: 500;
       }
+
+      tbody tr:hover { background: rgba(0, 0, 0, 0.02); }
+      tbody tr:last-child td { border-bottom: none; }
+      
+      /* Make Zewardy column stand out */
+      td:nth-child(2) { color: $purple; font-weight: 700; }
+    }
+
+    .faq-container {
+      margin-top: 50px;
+      border-top: 1px solid $gray-border;
+      padding-top: 40px;
+    }
+
+    .faq-item {
+      background: $gray-light;
+      padding: 24px;
+      border-radius: 16px;
+      margin-bottom: 20px;
+      border-left: 4px solid $purple;
+      
+      p { margin-bottom: 0; font-size: 1.05rem; }
     }
   }
 }
