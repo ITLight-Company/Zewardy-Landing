@@ -289,6 +289,12 @@ main {
         border-radius: 50%;
         margin-left: auto;
         margin-right: auto;
+
+        &__img {
+          width: 64px;
+          height: 64px;
+          margin: 0 auto;
+        }
       }
 
       h3 {
